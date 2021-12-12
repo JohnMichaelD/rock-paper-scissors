@@ -2,66 +2,73 @@ let rockElem = document.querySelector('.rock');
 let paperElem = document.querySelector('.paper');
 let scissorsElem = document.querySelector('.scissors');
 
-let rock = 1;
-let paper = 2;
-let scissors = 3;
+let rock;
+let paper;
+let scissors;
 
-let playerSelection = "rock";
+let playerSelection;
 let computerSelection;
 let computerWins = 0;
 let playerWins = 0;
 
-computerPlay();
+game();
+playRound(playerSelection, computerSelection);
 playerPlay();
-compareSelections(playerSelection, computerSelection);
+computerPlay();
 
 // computer randomly chooses rock, paper, or scissors
 function computerPlay() {
         computer = Math.floor(Math.random() * 3) + 1;
         if (computer == 1) {
-            computerSelection = "rock";
+            return computerSelection = "rock";
         } else if (computer == 2) {
-            computerSelection = "paper";
+            return computerSelection = "paper";
         } else if (computer == 3) {
-            computerSelection = "scissors";
+            return computerSelection = "scissors";
         } else {
-            return 4;
+            return console.log("error");
         }
-    console.log("Computer chose " + computerSelection)
-}
+} console.log("Computer chose " + computerSelection)
 
 //listen for player input, return choice
 function playerPlay() {
     rockElem.addEventListener('click', () => {
         playerSelection = "rock";
-        compareSelections();
-        console.log("Player chose " + playerSelection)
+        console.log("Player chose " + playerSelection);
+        game(playerSelection);
     })
     paperElem.addEventListener('click', () => {
         playerSelection = "paper";
-        console.log("Player chose " + playerSelection)
+        console.log("Player chose " + playerSelection);
+        game(playerSelection);
     })
     scissorsElem.addEventListener('click', () => {
         playerSelection = "scissors";
-        console.log("Player chose " + playerSelection)
+        console.log("Player chose " + playerSelection);
+        game(playerSelection);
     })
+} 
+
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection == "rock" && computerSelection == "rock") {
+        console.log("it's a tie!");
+    } else if (playerSelection == "rock" && computerSelection == "scissors") {
+        console.log("Player Wins with rock!");
+    } else if (playerSelection == "paper" && computerSelection == "rock") {
+        console.log("Player Wins with paper!")
+    } else if (playerSelection == "scissors" && computerSelection == "paper") {
+        console.log("Player Wins with scissors!");
+    }
 }
 
 
 // compare the results for each round, maybe switch 
-function compareSelections(playerSelection, computerSelection) {
-    if (playerSelection == "rock" && computerSelection == "rock") {
-        return console.log("it's a tie!");
-    } else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return console.log("Player Wins with rock!");
-    } else if (playerSelection === "paper" && computerSelection === "rock") {
-        return console.log("Player Wins with paper!")
-    } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return console.log("Player Wins with scissors!");
+function game() {
+    for (let i = 0; i < 5; i++) {
+        console.log("pick rock, paper, or scissors")
+        playRound(playerSelection, computerSelection);
     }
-}
-
-console.log(compareSelections(playerSelection, computerSelection));
+};
 
 
 // PSEUDOCODE
