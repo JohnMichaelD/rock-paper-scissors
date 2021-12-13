@@ -6,3 +6,10 @@
 - https://www.w3schools.com/js/js_loop_for.asp
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND
 - https://stackoverflow.com/questions/21700364/adding-click-event-listener-to-elements-with-the-same-class/21700383
+- https://www.javascripttutorial.net/javascript-call-stack/
+- https://javascript.info/function-expressions#callback-functions
+
+things I'm having trouble with:
+- call stack
+- function scope
+- sending and returning function arguments
