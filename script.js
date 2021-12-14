@@ -7,9 +7,14 @@ let playerSelection;
 let computerWins = 0;
 let playerWins = 0;
 
-//game();
+game();
 
 function game(){
+
+
+
+
+
     if (playerWins > computerWins) {
         console.log("Player wins with " + playerWins + " points!");
     } else if (computerWins > playerWins) {
