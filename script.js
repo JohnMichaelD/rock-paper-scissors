@@ -8,14 +8,14 @@ let computerWins = 0;
 let playerWins = 0;
 let winner;
 
-
+//when called, resets scores to 0
 function updateScore() {
     computerWins = 0;
     playerWins = 0;
     return playerWins, computerWins;
 }
 
-
+//compares the scores, first to 5 wins, calls updateScore function
 function winnerResult(playerWins, computerWins) {
     if (playerWins >= 5) {
         console.log("Player has won first! Play again?");
@@ -28,6 +28,7 @@ function winnerResult(playerWins, computerWins) {
     }
 }
 
+//takes in two variables, compares the results, and calls winnerResult Function
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
         console.log("This round is a tie!");
@@ -64,7 +65,7 @@ function playRound(playerSelection, computerSelection) {
     } 
 }
 
-// computer randomly chooses rock, paper, or scissors when called, updates
+// computer randomly chooses rock, paper, or scissors when called, then calls playRound()
 function computerPlay() {
     computer = Math.floor(Math.random() * 3) + 1;
     if (computer == 1) {
@@ -84,6 +85,8 @@ function computerPlay() {
     }
 } 
 
+
+//event listeners wait for player to begin game by clicking buttons
 rockElem.addEventListener('click', () => {
     playerSelection = "rock";
     console.log("Player chose " + playerSelection);
